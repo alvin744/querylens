@@ -1,0 +1,39 @@
+# macOS
+.DS_Store
+
+# environment files
+.env
+*.env
+!.env.example
+
+# Python
+backend/venv/
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+
+# SQLite
+backend/querylens.db
+*.db
+
+# FastAPI / Python misc
+.pytest_cache/
+.mypy_cache/
+
+# Node
+frontend/node_modules/
+node_modules/
+
+# Frontend build
+frontend/dist/
+dist/
+
+# Logs
+*.log
+
+# VS Code
+.vscode/
+
+# JetBrains
+.idea/
