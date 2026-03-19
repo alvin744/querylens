@@ -13,10 +13,10 @@ Search monetization depends on showing **relevant ads without harming user exper
 Operations teams must:
 - evaluate ad relevance at scale
 - maintain consistent labeling standards
-- collaborate with product & algorithm teams
+- collaborate with product and algorithm teams
 - use AI to improve efficiency without losing control
 
-QueryLens was built to simulate this real-world workflow — not just an AI demo.
+QueryLens was built to simulate this real-world workflow, not just as an AI demo.
 
 ---
 
@@ -25,10 +25,8 @@ QueryLens was built to simulate this real-world workflow — not just an AI demo
 ### 🧠 AI-Assisted Evaluation
 - Classifies **query intent**
 - Assigns **relevance label**
-- Generates **score + reasoning**
+- Generates **score and reasoning**
 - Acts as a **first-pass reviewer**
-
----
 
 ### 👤 Human-in-the-Loop Review
 - Reviewers assign final labels:
@@ -38,14 +36,10 @@ QueryLens was built to simulate this real-world workflow — not just an AI demo
 - Add notes to justify decisions
 - Override AI outputs
 
----
-
 ### ⚠️ Disagreement Detection
 - Highlights when **AI ≠ Human**
 - Enables **focused review on failure cases**
 - Supports model improvement workflows
-
----
 
 ### 📊 Ops Dashboard
 Tracks key quality metrics:
@@ -54,38 +48,36 @@ Tracks key quality metrics:
 - Label distribution
 - Query-level disagreement analysis
 
----
-
 ### 🔍 Disagreement-First Workflow
 Toggle to:
 - View all cases
-- OR only **problematic (AI wrong) cases**
+- View only **problematic cases** where AI and human labels disagree
 
-👉 This mimics real ops prioritization
+This mimics how real operations teams prioritize higher-value review work.
 
 ---
 
 ## 🧠 Product Thinking
 
-This project demonstrates 3 core ideas:
+This project demonstrates three core ideas:
 
 ### 1. AI should assist, not replace
-AI provides recommendations, humans remain the source of truth.
+AI provides recommendations, while humans remain the source of truth.
 
 ### 2. Prioritization matters
-Disagreement-focused workflows reduce unnecessary review effort.
+Disagreement-focused workflows reduce unnecessary review effort and surface model failure cases faster.
 
-### 3. Evaluation must be measurable
+### 3. Evaluation should be measurable
 Metrics create a feedback loop for improving:
 - models
 - prompts
-- guidelines
+- labeling guidelines
 
 ---
 
 ## 🔄 User Flow
 
-1. Load search query + ads
+1. Load a search query and ad candidates
 2. Run AI evaluation
 3. Review AI output:
    - intent
@@ -93,7 +85,7 @@ Metrics create a feedback loop for improving:
    - score
    - reasoning
 4. Assign human label
-5. Add notes
+5. Add reviewer notes
 6. Save evaluation
 7. View disagreement status
 8. Monitor dashboard trends
@@ -105,20 +97,27 @@ Metrics create a feedback loop for improving:
 ### Frontend
 - React (Vite)
 - Axios
-- Recharts (charts)
+- Recharts
 
 ### Backend
 - FastAPI
 - SQLAlchemy
-- SQLite (MVP)
+- SQLite
 
 ### AI Layer
 - OpenAI API
 
 ### Deployment
-- Render-ready (backend + frontend)
-- Easily upgradeable to Postgres
+- Render-ready architecture
+- Easy upgrade path to Postgres
 
 ---
 
 ## 🧱 Architecture
+
+```text
+React Frontend
+      ↓
+FastAPI Backend
+      ↓
+SQLite DB  +  OpenAI API
