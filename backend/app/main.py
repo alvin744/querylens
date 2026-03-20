@@ -9,7 +9,9 @@ app = FastAPI(title="QueryLens API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # later restrict to frontend URL
+    allow_origins=[
+    "https://querylens-frontend.onrender.com"
+    ]
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
